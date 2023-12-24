@@ -39,7 +39,7 @@ function addUser() {
             users.push(user);
 
             correctData();
-            location.pathname = "/index.html";
+            location.pathname = "/loginSystem/index.html";
         }
 
     } else {
@@ -62,7 +62,7 @@ function loginUser() {
                     console.log(users[i].password);
                     correctData();
                     localStorage.setItem("UserSession", userSession);
-                    window.location.pathname = "/home.html";
+                    window.location.pathname = "/loginSystem/home.html";
 
                     break;
                 }  else {
@@ -86,12 +86,12 @@ function loginUser() {
 }
 
 
-if (location.pathname == "/home.html") {
+if (location.pathname == "/loginSystem/home.html") {
     if (localStorage.getItem("UserSession") != null) {
         document.getElementById("boxContent").innerHTML = `<span
         class="text-center d-inline-block text-center w-100 mb-2 text-info fs-3">Welcome ${localStorage.getItem("UserSession")}</span>`;
     } else {
-        window.location.pathname = '/index.html';
+        window.location.pathname = '/loginSystem/index.html';
     }
 
 }
@@ -110,5 +110,5 @@ function wrongData() {
 
 function logOut() {
     localStorage.removeItem("UserSession");
-    location.pathname = "/index.html";
+    location.pathname = "/loginSystem/index.html";
 }
