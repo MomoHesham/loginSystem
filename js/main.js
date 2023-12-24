@@ -62,7 +62,7 @@ function loginUser() {
                     console.log(users[i].password);
                     correctData();
                     localStorage.setItem("UserSession", userSession);
-                    window.location.href = "http://127.0.0.1:5500/home.html";
+                    window.location.pathname = "/home.html";
 
                     break;
                 }  else {
@@ -91,7 +91,7 @@ if (location.pathname == "/home.html") {
         document.getElementById("boxContent").innerHTML = `<span
         class="text-center d-inline-block text-center w-100 mb-2 text-info fs-3">Welcome ${localStorage.getItem("UserSession")}</span>`;
     } else {
-        window.location.href = 'index.html';
+        window.location.pathname = '/index.html';
     }
 
 }
@@ -110,5 +110,5 @@ function wrongData() {
 
 function logOut() {
     localStorage.removeItem("UserSession");
-    location.href = "index.html";
+    location.pathname = "/index.html";
 }
